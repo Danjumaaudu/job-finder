@@ -1,21 +1,31 @@
-import fetch from "node-fetch";
+import { chromium } from "playwright";
+import { job } from "./jobberman-scraper";
 
-export async function Fetchremoteok() {
-  const response = await fetch("https://remoteok.com/api", {
-    headers: {
-      "User-Agent": "Mozilla/5.0", //in order to avoid 403
-    },
-  });
-  const jobs: any = await response.json();
+export async function RemoteokScraper(): Promise<job[]> {
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
 
-  return jobs
-  .filter((jobs:any)=>jobs.id)
-  .map((job:any) => ({
-    id:`remoteok-${jobs.id}`,
-    company: job.company,
-    position: job.position,
-    link: job.url,
-    source: "Remoteok",
+  await page.goto("https://remoteok.com/", { waitUntil: "networkidle" });
+  await page.waitForSelector("tr.job");
 
-  }));
+  const jobs: job[] = await page.$$eval("tr.job", (rows) =>
+    rows.map((row) => {
+      const title = row.querySelector("h2")?.textContent?.trim() || "Untitled";
+      const company =
+        row.querySelector(".companyLink")?.textContent?.trim() || "Unknown";
+      const href = row.querySelector("a.preventLink")?.getAttribute("href") || "";
+      const link = "https://remoteok.com" + href;
+
+      return {
+        id: link.split("/").pop() || link,
+        title,
+        company,
+        link: link || "no-link",
+        source: "RemoteOK",
+      };
+    })
+  );
+
+  await browser.close();
+  return jobs.slice(0, 20);
 }
