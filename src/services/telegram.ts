@@ -2,7 +2,7 @@
 import bot from "../telegram-bot";
 import { Subscriber } from "../models/subscribers";
 
-export async function sendToTelegram(job: { title: string; company: string; link: string }) {
+export async function sendToTelegram(job: { title: string; company: string; link: string; datePosted?: string; }) {
   const subscribers = await Subscriber.find();
 
   for (const sub of subscribers) {

@@ -1,12 +1,8 @@
-import { fetchalljobs } from "./sources/aggregator";
+import { FetchWWR } from "./sources/weworkremotely";
+import { Fetchjobs } from "./services/job-services";
 
-async function run() {
-  const jobs = await fetchalljobs();
-  console.log("alljobs : ", jobs);
-  for (const j of jobs.slice(0, 30)) {
-    console.log(`\n${j.title}\n${j.company}\n${j.link}\n${j.source}`);
-  }
-}
-
-run().catch(console.error);
-
+(async () => {
+  const jobs = await Fetchjobs();
+  console.log("Fetched", jobs.length, "jobs");
+  console.log(jobs.slice(0, 5));
+})();
