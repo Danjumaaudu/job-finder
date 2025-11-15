@@ -28,7 +28,6 @@
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "mongoose": "^8.18.1",
-    "node": "^24.8.0",
     "node-cron": "^4.2.1",
     "node-fetch": "^3.3.2",
     "playwright": "^1.55.1",
@@ -38,7 +37,7 @@
     "@types/cheerio": "^0.22.35",
     "@types/express": "^5.0.3",
     "@types/mongoose": "^5.11.96",
-    "@types/node-telegram-bot-api": "^0.64.11",
+    "@types/node-telegram-bot-api": "^0.64.12",
     "node-telegram-bot-api": "^0.66.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
