@@ -78,9 +78,9 @@ export async function JobbermanScrapper(maxpages = 4): Promise<job[]> {
 
       await jobPage.close();
     }
-    console.log("🔍 Visiting:", url); // after each page
-    console.log("📦 Found job links:", jobLinks.length); // after extracting links
-    console.log("✅ Total collected so far:", jobs.length); // inside the loop
+    console.log("Visiting:", url); // after each page
+    console.log(" Found job links:", jobLinks.length); // after extracting links
+    console.log(" Total collected so far:", jobs.length); // inside the loop
 
     await page.close();
   }

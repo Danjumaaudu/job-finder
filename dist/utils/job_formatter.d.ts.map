@@ -1,0 +1,1 @@
+{"version":3,"file":"job_formatter.d.ts","sourceRoot":"","sources":["../../src/utils/job_formatter.ts"],"names":[],"mappings":"AAAA,UAAU,GAAG;IACX,KAAK,EAAE,MAAM,CAAC;IACd,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,EAAE,MAAM,CAAC;IACb,MAAM,EAAE,MAAM,CAAC;CAChB;AAED,wBAAgB,SAAS,CAAC,GAAG,EAAE,GAAG,UAWjC"}
