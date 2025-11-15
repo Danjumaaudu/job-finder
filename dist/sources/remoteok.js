@@ -4,11 +4,6 @@ exports.RemoteokScraper = RemoteokScraper;
 exports.getRecentRemoteOkJobs = getRecentRemoteOkJobs;
 const playwright_1 = require("playwright");
 const remote_okmodels_1 = require("../models/remote-okmodels");
-const db_1 = require("../config/db");
-(async () => {
-    await (0, db_1.connectDB)();
-    await RemoteokScraper();
-})();
 async function RemoteokScraper() {
     const browser = await playwright_1.chromium.launch({ headless: true });
     const page = await browser.newPage();

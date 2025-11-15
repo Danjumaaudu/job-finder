@@ -5,10 +5,7 @@ import { connectDB } from "../config/db";
 import dotenv from "dotenv";
 dotenv.config();
 
-(async () => {
-  await connectDB();
-  await JobbermanScrapper();
-})();
+
 
 export async function JobbermanScrapper(maxpages = 4): Promise<job[]> {
   

@@ -3,10 +3,7 @@ import { job } from "../types/Jobs";
 import { WeWorkRemotelyModel } from "../models/weworkremotelyModels";
 import { connectDB } from "../config/db";
 
-(async () => {
-  await connectDB();
-  await FetchWWR();
-})();
+
 
 export async function FetchWWR(): Promise<job[]> {
   const browser = await chromium.launch({ headless: true }); // slowMo helps visually debug

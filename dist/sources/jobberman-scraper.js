@@ -7,13 +7,8 @@ exports.JobbermanScrapper = JobbermanScrapper;
 exports.getRecentJobbermanJobs = getRecentJobbermanJobs;
 const playwright_1 = require("playwright");
 const jobberman_model_1 = require("../models/jobberman-model");
-const db_1 = require("../config/db");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-(async () => {
-    await (0, db_1.connectDB)();
-    await JobbermanScrapper();
-})();
 async function JobbermanScrapper(maxpages = 4) {
     const browser = await playwright_1.chromium.launch({ headless: true });
     const jobs = [];

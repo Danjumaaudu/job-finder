@@ -1,1 +1,1 @@
-{"version":3,"file":"weworkremotely.d.ts","sourceRoot":"","sources":["../../src/sources/weworkremotely.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,GAAG,EAAE,MAAM,eAAe,CAAC;AASpC,wBAAsB,QAAQ,IAAI,OAAO,CAAC,GAAG,EAAE,CAAC,CAgD/C;AAED,wBAAsB,gBAAgB,CAAC,KAAK,SAAK;;;;MAKhD"}
+{"version":3,"file":"weworkremotely.d.ts","sourceRoot":"","sources":["../../src/sources/weworkremotely.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,GAAG,EAAE,MAAM,eAAe,CAAC;AAMpC,wBAAsB,QAAQ,IAAI,OAAO,CAAC,GAAG,EAAE,CAAC,CAgD/C;AAED,wBAAsB,gBAAgB,CAAC,KAAK,SAAK;;;;MAKhD"}

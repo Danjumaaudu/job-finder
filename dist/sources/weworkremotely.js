@@ -4,11 +4,6 @@ exports.FetchWWR = FetchWWR;
 exports.getRecentWWRJobs = getRecentWWRJobs;
 const playwright_1 = require("playwright");
 const weworkremotelyModels_1 = require("../models/weworkremotelyModels");
-const db_1 = require("../config/db");
-(async () => {
-    await (0, db_1.connectDB)();
-    await FetchWWR();
-})();
 async function FetchWWR() {
     const browser = await playwright_1.chromium.launch({ headless: true }); // slowMo helps visually debug
     const page = await browser.newPage();

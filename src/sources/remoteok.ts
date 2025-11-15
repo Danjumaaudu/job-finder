@@ -2,10 +2,6 @@ import { chromium } from "playwright";
 import { job } from "../types/Jobs";
 import { RemoteOkModel } from "../models/remote-okmodels";
 import { connectDB } from "../config/db";
-(async () => {
-  await connectDB();
-  await RemoteokScraper();
-})();
 
 export async function RemoteokScraper(): Promise<job[]> {
   const browser = await chromium.launch({ headless: true });
