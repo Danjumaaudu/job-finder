@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/Danjumaaudu/job-finder#readme",
   "dependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/express": "^5.0.5",
+    "@types/mongoose": "^5.11.96",
+    "@types/node-telegram-bot-api": "^0.64.12",
     "axios": "^1.12.2",
     "cheerio": "^1.1.2",
     "cron": "^4.3.3",
@@ -30,15 +34,11 @@
     "mongoose": "^8.18.1",
     "node-cron": "^4.2.1",
     "node-fetch": "^3.3.2",
+    "node-telegram-bot-api": "^0.66.0",
     "playwright": "^1.55.1",
     "rss-parser": "^3.13.0"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.35",
-    "@types/express": "^5.0.3",
-    "@types/mongoose": "^5.11.96",
-    "@types/node-telegram-bot-api": "^0.64.12",
-    "node-telegram-bot-api": "^0.66.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   }
