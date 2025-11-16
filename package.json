@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Danjumaaudu/job-finder#readme",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@types/cheerio": "^0.22.35",
     "@types/express": "^5.0.5",
     "@types/mongoose": "^5.11.96",

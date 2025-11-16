@@ -73,7 +73,7 @@ bot.onText(/\/jobs/, async (msg) => {
   if (!newJobs.length) return bot.sendMessage(chatId, "No new jobs yet");
 
   // sends only new jobs
-  const chunkSize = 9;
+  const chunkSize = 2;
   for (let i = 0; i < newJobs.length; i += chunkSize) {
     const chunk = newJobs.slice(i, i + chunkSize);
     const text = chunk
