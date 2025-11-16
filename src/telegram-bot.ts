@@ -16,7 +16,17 @@ mongoose
   .then(() => console.log("Mongo connected"))
   .catch((err) => console.error("Unable to connect to mongodb", err));
 
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, {
+  polling: {
+    interval: 300,
+    autoStart: true,
+    params: {
+      timeout: 60, // long polling timeout
+      limit: 100, // batch updates
+      allowed_updates: ["message", "callback_query"],
+    },
+  },
+});
 
 // /start
 bot.onText(/\/start/, async (msg) => {
@@ -56,7 +66,7 @@ bot.onText(/\/jobs/, async (msg) => {
     return;
   }
   //checks db if job has already been sent
-  const sentForuser = await SentJobsModel.find({chatId}).lean();
+  const sentForuser = await SentJobsModel.find({ chatId }).lean();
   const sentIds = new Set(sentForuser.map((s) => s.jobId));
 
   const newJobs = jobs.filter((j) => !sentIds.has(j.id));
