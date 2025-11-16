@@ -16,7 +16,7 @@ mongoose
   .then(() => console.log("Mongo connected"))
   .catch((err) => console.error("Unable to connect to mongodb", err));
 
-const bot = new TelegramBot(token, {
+const bot = new TelegramBot(token,/** {
   polling: {
     interval: 300,
     autoStart: true,
@@ -26,7 +26,7 @@ const bot = new TelegramBot(token, {
       allowed_updates: ["message", "callback_query"],
     },
   },
-});
+} */ );
 
 // /start
 bot.onText(/\/start/, async (msg) => {
