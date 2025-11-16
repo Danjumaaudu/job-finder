@@ -7,6 +7,7 @@ const app = express();
 
 const PORT = 5000;
 
+app.use(express.json());
 app.post(`/bot${process.env.BOT_TOKEN}`, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
